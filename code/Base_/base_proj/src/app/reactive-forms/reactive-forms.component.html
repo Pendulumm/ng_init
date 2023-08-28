@@ -1,0 +1,32 @@
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+        <label>
+            用户名: <input type="text" formControlName="username">
+        </label>
+        <label>
+            密码: <input type="password" formControlName="password">
+        </label>
+
+        <p>
+            <button type="submit">提交表单</button>
+        </p>
+    </form>
+
+    <!-- <label>
+        用户名: <input type="text" [formControl]="username">
+    </label> -->
+    <!-- <p> {{username.value}} </p> -->
+    <!-- <p *ngIf="username.dirty && username?.errors?.required">用户名为必填项</p> -->
+    <!-- <p *ngIf="username.dirty && username.hasError('required')">用户名为必填项</p> -->
+    <!-- <p *ngIf="username.dirty && username.hasError('minlength')">用户名密码长度不能少于3位</p> -->
+    <!-- <p *ngIf="username.dirty && username.hasError('maxlength')">用户名密码长度不能大于6位</p>
+    <label>
+        密码: <input type=" password" [formControl]="password">
+    </label>
+    <p> {{password.value}} </p>
+
+    <button (click)="getUserName()">获取用户名</button>
+    <button (click)="setUserName()">更新用户名</button> -->
+
+    <!-- <p *ngIf="username.dirty && username.hasError('regerror')">用户名为小写字母,长度为3-6位</p> -->
+</div>

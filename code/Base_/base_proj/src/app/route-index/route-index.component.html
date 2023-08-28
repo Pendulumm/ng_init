@@ -1,0 +1,14 @@
+<p>route-index works!</p>
+
+<!-- <routerLink></routerLink> -->
+
+<!-- 注意：传统的超链接可以跳转，但属于DOM树完全重建 -->
+<!-- <a href="pDetail">进入详情页</a> -->
+
+<a routerLink="/pDetail">进入详情页</a>
+<button routerLink="/pDetail">进入详情页</button>
+<div routerLink="/pDetail">进入详情页</div>
+<hr>
+<button (click)="jumpTo()">跳转到商品详情</button>
+<hr>
+<a routerLink="/pList">查看商品列表</a>

@@ -1,0 +1,43 @@
+<p>emp-list works!</p>
+<h3>员工列表</h3>
+<hr>
+<table border="1" width="100%">
+    <thead>
+
+    </thead>
+    <tbody>
+        <tr *ngIf="empList.length === 0">
+            <td colspan="7">没有员工了</td>
+        </tr>
+        <tr *ngFor="let e of empList; index as i">
+            <td>{{e.eid}}</td>
+            <!-- <td>{{e.ename}}</td> -->
+            <!-- <td>{{e.ename | lowercase}}</td> -->
+            <!-- <td>{{e.ename | uppercase}}</td> -->
+            <!-- <td>{{e.ename | titlecase}}</td> -->
+            <td>{{e.ename | slice:0:3}}...</td>
+            <!-- <td>{{e.salary}}</td> -->
+            <!-- <td>{{e.salary | number:'4.1-4'}}</td> -->
+            <!-- <td>{{e.salary | number:'4.2-2'}}</td> -->
+            <!-- <td>{{e.salary | currency}}</td> -->
+            <td>{{e.salary | currency:'¥'}}</td>
+            <!-- <td>{{e.birthday}}</td> -->
+            <!-- <td>{{e.birthday | date}}</td> -->
+            <!-- <td>{{e.birthday | date:'yyyy-MM-dd HH:mm:ss'}}</td> -->
+            <td>{{e.birthday | date:'fullDate'}}</td>
+            <!-- <td>{{e.sex | sex}}</td> -->
+            <!-- 使用冒号给管道传参 -->
+            <td>{{e.sex | sex:'en'}}</td>
+            <!-- <td>{{e.sex | sex:'jp'}}</td> -->
+            <!-- <td>{{e.pStatus | pStatus:'short'}}</td> -->
+            <td>{{e.pStatus | pStatus:'long'}}</td>
+            <td>
+                <button (click)="deleteItem(i)">删除</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+<div> {{empList | json}} </div>
+<!-- <div> {{JSON.stringify(empList)}} </div> -->

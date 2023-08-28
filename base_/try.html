@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const map1 = new Map();
+        map1.set('a', 1);
+        map1.set('b', 2);
+        map1.set('c', 3);
+        const arr1 = new Array('a', 'b', 'c');
+        const iteratorArr = arr1[Symbol.iterator]();
+        const iteratorMap = map1[Symbol.iterator]();
+        // console.log('map1', map1);
+        // console.log('arr1', arr1);
+        // console.log('map1', map1);
+        // console.log('iteratorArr', iteratorArr);
+        // console.log('iteratorMap', iteratorMap);
+        console.log('iteratorArr.next()>>> ', iteratorArr.next());
+        console.log('iteratorArr.next()>>> ', iteratorArr.next());
+        console.log('iteratorArr.next()>>> ', iteratorArr.next());
+        console.log('iteratorArr.next()>>> ', iteratorArr.next());
+        console.log('iteratorArr.next()>>> ', iteratorArr.next());
+        // console.log('iteratorArr.next()>>> ', iteratorArr.next(1));
+        // console.log('iteratorMap.next()>>> ', iteratorMap.next());
+
+        // for (const value of iterator1) {
+        //     console.log(value);
+        // }
+    </script>
+</body>
+
+</html>

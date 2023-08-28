@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <img slot="start" src="../../assets/logo.png" alt="">
+    <div>
+      <ion-searchbar placeholder="商品搜索"></ion-searchbar>
+    </div>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content>
+  <!-- 轮播广告 swiper -->
+  <swiper-container [pagination]="true" [autoplay]="{
+        delay:1800,
+        disableOnInteraction:false,
+        pauseOnMouseEnter:true,
+        reverseDirection:false,
+      }" [loop]="true" #swiper>
+    <swiper-slide *ngFor="let item of swipers;index as i">
+      <img [src]="item.image_src" alt="Loading Failed!">
+    </swiper-slide>
+
+  </swiper-container>
+
+  <!-- 首页推荐/1F (ion-item + grid>card ) -->
+
+  <!-- <ion-item>
+    <img slot="start" src="../../assets/computer_icon.png">
+    <ion-label>首页推荐/1F</ion-label>
+  </ion-item> -->
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of navs">
+        <img [src]="item.image_src" alt="Loading Failed!" (click)="navClickHandler(item)">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-grid>
+    <ion-row *ngFor="let item of goods;index as i">
+      <ion-card>
+        <img [src]="item.floor_title.image_src" alt="">
+      </ion-card>
+      <ion-col size="6" *ngFor="let item of product_list[i];index as j">
+        <ion-card>
+          <img [src]="item.image_src" alt="">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <!-- 最新上架/2F (ion-item + grid>card ) -->
+  <!-- 热销单品/3F (ion-item + grid>card ) -->
+
+  <!-- 底部的图标 (grid>img) -->
+  <ion-grid>
+    <ion-row>
+      <ion-col sizes="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon1.png" alt="">
+        </div>
+      </ion-col>
+      <ion-col sizes="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon2.png" alt="">
+        </div>
+      </ion-col>
+      <ion-col sizes="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon3.png" alt="">
+        </div>
+      </ion-col>
+      <ion-col sizes="3">
+        <div class="ion-text-center">
+          <img src="../../assets/icon4.png" alt="">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

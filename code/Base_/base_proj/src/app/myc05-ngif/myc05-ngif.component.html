@@ -1,0 +1,7 @@
+<div>xxxxxxx</div>
+<button *ngIf="hasMore; else noMore" (click)="loadMore()">加载更多</button>
+
+<ng-template #noMore>
+    <hr>
+    <p>已经到数据底线了</p>
+</ng-template>

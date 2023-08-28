@@ -1,0 +1,14 @@
+<p>myc02-ngfor works!</p>
+
+<ul>
+    <li *ngFor="let e of empList"> {{e}} </li>
+</ul>
+
+<ul>
+    <!-- <li *ngFor="let e of empList; let i = index;"> {{i+1}} </li> -->
+    <li *ngFor="let e of empList; index as i;"> {{i+1}} </li>
+</ul>
+
+<div *ngFor="let item of items; trackBy: trackByItems">
+    ({{item.id}}) {{item.name}}
+</div>

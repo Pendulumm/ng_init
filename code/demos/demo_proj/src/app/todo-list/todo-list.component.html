@@ -1,0 +1,14 @@
+<p>todo-list works!</p>
+<h3>待办事项列表</h3>
+<hr>
+<input type="text" placeholder="请输入..."  [(ngModel)]="userInput"> <button (click)="addItem()" >添加事项</button>
+<!-- ngif -->
+<p *ngIf="todoList.length == 0" >尚无待办事项</p>
+
+<ul>
+    <!-- ngFor -->
+    <li *ngFor="let item of todoList;let i = index">
+        <!-- (click)="delete()" -->
+        {{i+1}}-{{item}} &nbsp; <button (click)="delete(i)">删除</button>
+    </li>
+</ul>

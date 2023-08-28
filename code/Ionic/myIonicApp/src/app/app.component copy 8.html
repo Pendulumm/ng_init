@@ -1,0 +1,98 @@
+<ion-app>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+  <ion-content>
+    <h3>简单的列表项</h3>
+    <ion-item>
+      简单的列表项
+    </ion-item>
+
+    <ion-item>
+      <ion-label>简单的列表项</ion-label>
+    </ion-item>
+
+    <ion-item color="danger">
+      <ion-label>红色的列表项</ion-label>
+    </ion-item>
+    <ion-item color="warning">
+      <ion-label>黄色的列表项</ion-label>
+    </ion-item>
+    <ion-item color="success">
+      <ion-label>绿色的列表项</ion-label>
+    </ion-item>
+
+    <h3>可以点击的列表项</h3>
+    <ion-item (click)="doClick()">
+      <ion-label>按钮列表项</ion-label>
+    </ion-item>
+    <ion-item href="http://baidu.com">
+      <ion-label>超链接列表项</ion-label>
+    </ion-item>
+
+    <h3>带 "详情" 指示器的列表项 </h3>
+    <ion-item detail="true" href="http://baidu.com">
+      <ion-label>
+        show more
+      </ion-label>
+    </ion-item>
+
+    <h3>复杂列表项</h3>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../assets/0.jpg" alt="">
+      </ion-avatar>
+      <ion-label>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ratione molestiae quas delectus atque quos
+        asperiores inventore odit aperiam veritatis, esse veniam laudantium dolorum quod at hic enim alias sunt.
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="end">
+        <img src="../assets/1.jpg" alt="">
+      </ion-avatar>
+      <ion-label>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ratione molestiae quas delectus atque quos
+        asperiores inventore odit aperiam veritatis, esse veniam laudantium dolorum quod at hic enim alias sunt.
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../assets/2.jpg" alt="">
+      </ion-avatar>
+      <ion-label>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ratione molestiae quas delectus atque quos
+        asperiores inventore odit aperiam veritatis, esse veniam laudantium dolorum quod at hic enim alias sunt.
+      </ion-label>
+      <ion-avatar slot="end">
+        <img src="../assets/1.jpg" alt="">
+      </ion-avatar>
+    </ion-item>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="../assets/2.jpg" alt="">
+      </ion-thumbnail>
+      <ion-label>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ratione molestiae quas delectus atque quos
+        asperiores inventore odit aperiam veritatis, esse veniam laudantium dolorum quod at hic enim alias sunt.
+      </ion-label>
+      <ion-thumbnail slot="end">
+        <img src="../assets/1.jpg" alt="">
+      </ion-thumbnail>
+    </ion-item>
+
+    <ion-item detail="true">
+      <ion-thumbnail slot="start">
+        <img src="../assets/2.jpg" alt="">
+      </ion-thumbnail>
+      <ion-label>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ratione molestiae quas delectus atque quos
+        asperiores inventore odit aperiam veritatis, esse veniam laudantium dolorum quod at hic enim alias sunt.
+      </ion-label>
+      <ion-button slot="end">
+        查看详情
+      </ion-button>
+    </ion-item>
+
+  </ion-content>
+
+</ion-app>

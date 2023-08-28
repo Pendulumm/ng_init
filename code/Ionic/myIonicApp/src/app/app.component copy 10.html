@@ -1,0 +1,13 @@
+<ion-app>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+  <ion-content>
+    <h3>Inline Alerts</h3>
+    <ion-button (click)="setOpen(true)">Click Me</ion-button>
+    <ion-alert [isOpen]="isAlertOpen" header="Alert" subHeader="Important message" message="This is an alert!"
+      [buttons]="alertButtons" (didDismiss)="dismissListener($event)" (ionAlertDidDismiss)="setOpen(false)"></ion-alert>
+
+      <h3>Controller Alerts</h3>
+      <ion-button (click)="presentAlert()">退出登录</ion-button>
+  </ion-content>
+
+</ion-app>

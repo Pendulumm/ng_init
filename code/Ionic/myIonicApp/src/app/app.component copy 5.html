@@ -1,0 +1,34 @@
+<ion-app>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+  <ion-content>
+    <h3>输入框</h3>
+    <input type="text">
+    <ion-input></ion-input>
+    <ion-input placeholder="请输入用户名"></ion-input>
+    <ion-input type="password" placeholder="请输入密码"></ion-input>
+    <ion-input clearInput="" type="password" placeholder="请输入密码"></ion-input>
+
+    <h3>带标签的输入框</h3>
+    <ion-item>
+      <ion-input label="username:"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="username:" labelPlacement="fixed"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="username:" labelPlacement="stacked"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="username:" labelPlacement="floating"></ion-input>
+    </ion-item>
+
+    <h3>搜索输入框</h3>
+    <ion-searchbar></ion-searchbar>
+    <ion-searchbar placeholder="商品搜索"></ion-searchbar>
+    <ion-searchbar color="dark"></ion-searchbar>
+    <ion-searchbar showCancelButton="always"></ion-searchbar>
+    <ion-searchbar showCancelButton="never"></ion-searchbar>
+    <ion-searchbar showCancelButton="focus"></ion-searchbar>
+  </ion-content>
+
+</ion-app>

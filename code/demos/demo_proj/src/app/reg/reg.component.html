@@ -1,0 +1,12 @@
+<p>reg works!</p>
+<!-- View -->
+请输入用户名：
+<input [(ngModel)]="uname" placeholder="请输入用户名" (ngModelChange)="changeHandler()">
+
+<!-- Angular专业事件:"模型数据改变" -->
+
+<!-- <p>当前的用户输入: {{uname}} </p> -->
+<hr>
+请输入密码:
+<input type="password" [(ngModel)]="upwd" (ngModelChange)="upwdChange()"> <span> {{msg}} </span>
+<hr>

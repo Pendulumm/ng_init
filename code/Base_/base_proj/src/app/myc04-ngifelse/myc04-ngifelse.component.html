@@ -1,0 +1,11 @@
+<div *ngIf="adult; else forStu">
+    此处是家长看到的内容...
+</div>
+
+<button (click)="changeAge()">点击切换身份</button>
+
+<ng-template #forStu>
+    <p>
+        此处是学生看到的内容...
+    </p>
+</ng-template>

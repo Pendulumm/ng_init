@@ -1,0 +1,9 @@
+<div [ngClass]="isSpecial ? 'special' : ''">This div is special</div>
+<button (click)="changeIsSpecial()">change class special</button>
+<hr>
+<div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special.</div>
+<hr>
+
+<button [ngStyle]="myStyleObj" (click)="loadMore()">加载更多</button>
+<hr>
+<button [ngClass]="myClassObj" (click)="loadMore2()">加载更多</button>

@@ -1,0 +1,20 @@
+<ion-app>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+  <ion-content>
+    <h3>无限滚动组件</h3>
+    <ion-card>
+      <ion-item *ngFor="let item of items;let index = index">
+        <ion-avatar slot="start">
+          <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
+        </ion-avatar>
+        <ion-label>{{ item }}</ion-label>
+      </ion-item>
+    </ion-card>
+    <!-- 无限滚动组件 -->
+    <ion-infinite-scroll #infiniteScroll threshold="30px" (ionInfinite)="onIonInfinite($event)" >
+      <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
+  </ion-content>
+
+</ion-app>

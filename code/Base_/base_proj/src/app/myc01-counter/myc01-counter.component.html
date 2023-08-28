@@ -1,0 +1,12 @@
+<p>myc01-counter works!</p>
+<button (click)="minus_()">-</button>
+<span> {{counter}} </span>
+<button class="btn1" [title]="'当前购买数:'+counter" [attr.attr_expr]="'expression'" (click)="add_()">+</button>
+<hr>
+<img [src]="'../../assets/'+imgUrl" alt="">
+<!-- 以组件内为根路径 -->
+<img src="../../assets/1.jpg" alt="">
+<!-- 以模块为根路径 -->
+<img src="../assets/1.jpg" alt="">
+
+<img [src]="'/assets/'+imgUrl" alt="">

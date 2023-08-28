@@ -1,0 +1,8 @@
+<p>myc07-switch works!</p>
+
+<div [ngSwitch]="userLevel">
+    <p *ngSwitchCase="'normal' ">欢迎您：普通用户</p>
+    <div *ngSwitchCase="'vip'">欢迎您：贵宾用户</div>
+    <h3 *ngSwitchCase="'blackgold'">尊贵的黑金用户！</h3>
+    <span *ngSwitchDefault>您尚未登录</span>
+</div>
