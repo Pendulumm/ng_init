@@ -56,6 +56,7 @@ import { VoterComponent } from './blog-child-modify/voter.component';
 import { CountdownTimerComponent } from './blog-parent/countdown-timer.component';
 import { AstronautComponent } from './blog-parent/astronaut.component';
 import { MissionControlComponent } from './blog-parent/missioncontrol.component';
+import { FavoriteColorComponent } from './reactive-forms/fav-color.component';
 
 
 
@@ -125,7 +126,9 @@ const routes = [
     VoterComponent,
     CountdownTimerComponent,
     MissionControlComponent,
-    AstronautComponent
+    AstronautComponent,
+
+    FavoriteColorComponent
   ],
   imports: [
     //浏览器模块，只要Angular 用于Web项目，就必须导入此模块，其中导出了 CommonModule(ngFor,ngIf...)，
@@ -136,6 +139,7 @@ const routes = [
     HttpClientModule,
     RouterModule.forRoot(routes as any),    //导入路由模块，并注册了路由词典，用于根模块中
     ReactiveFormsModule,                    //响应式表单模块
+
   ],
   providers: [],
   bootstrap: [AppComponent]

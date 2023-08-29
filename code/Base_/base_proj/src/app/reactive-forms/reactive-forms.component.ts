@@ -79,7 +79,6 @@ export class ReactiveFormsComponent implements OnInit {
       console.log('表单验证成功,发送请求提交表单');
     } else {
       console.log('表单验证失败');
-
     }
   }
 }

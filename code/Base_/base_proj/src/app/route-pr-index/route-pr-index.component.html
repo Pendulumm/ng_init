@@ -1,2 +1,11 @@
-<a routerLink="/user/center">跳转用户中心</a>
-<button (click)="navToUserCenter()">点击跳转用户中心</button>
+<hr>
+<p>Navigate to UserCenter>>></p>
+<a routerLink="/user/center">跳转用户中心</a> &nbsp;&nbsp;
+<button (click)="navToUserCenter()">点击跳转用户中心</button>&nbsp;&nbsp;
+<button (click)="changeLogginInfo()">改变登录信息</button>&nbsp;&nbsp;
+<button (click)="changeLogginTime()">改变时间信息</button>&nbsp;&nbsp;
+<button (click)="viewDetail()">查看商品详情</button>&nbsp;&nbsp;
+<hr>
+<div>
+    <a routerLink="../user/center">Relative Route to userCenter</a>
+</div>
