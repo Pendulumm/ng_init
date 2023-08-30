@@ -12,10 +12,10 @@ export class ReactiveFormsComponent implements OnInit {
   // Validators.required 表示必填项
   // username: any = new FormControl('', [Validators.required]);
   //
-  // 验证规则：要求最少长度为3
+  // // 验证规则：要求最少长度为3
   // username: any = new FormControl('', [Validators.minLength(3)]);
   // username: any = new FormControl('', [Validators.maxLength(6)]);
-  // password = new FormControl('');
+  // password = new FormControl('',);
 
   // FormControl只能控制一个表单元素
   // username = new FormControl('', [this.customValidate]);
@@ -56,20 +56,17 @@ export class ReactiveFormsComponent implements OnInit {
   // }
 
   // 只要数据改变就会执行自定义验证器
-  // customValidate(control: AbstractControl): any {
-  //   // console.log(control);
-  //   // console.log(control.value);
-
-
-
-  //   if (/^[a-z]{3,6}$/.test(control.value)) {
-  //     // 成功 返回null
-  //     return null;
-  //   } else {
-  //     // 失败 返回错误对象
-  //     return { regerror: true }
-  //   }
-  // }
+  customValidate(control: AbstractControl): any {
+    // console.log(control);
+    // console.log(control.value);
+    if (/^[a-z]{3,6}$/.test(control.value)) {
+      // 成功 返回null
+      return null;
+    } else {
+      // 失败 返回错误对象
+      return { regerror: true }
+    }
+  }
 
   handleSubmit() {
     // console.log('表单提交了!',this.loginForm.value);

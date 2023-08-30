@@ -57,6 +57,7 @@ import { CountdownTimerComponent } from './blog-parent/countdown-timer.component
 import { AstronautComponent } from './blog-parent/astronaut.component';
 import { MissionControlComponent } from './blog-parent/missioncontrol.component';
 import { FavoriteColorComponent } from './reactive-forms/fav-color.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 
 
@@ -128,7 +129,8 @@ const routes = [
     MissionControlComponent,
     AstronautComponent,
 
-    FavoriteColorComponent
+    FavoriteColorComponent,
+     ProfileEditorComponent
   ],
   imports: [
     //浏览器模块，只要Angular 用于Web项目，就必须导入此模块，其中导出了 CommonModule(ngFor,ngIf...)，
