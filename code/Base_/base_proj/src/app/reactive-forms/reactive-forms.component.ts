@@ -15,7 +15,7 @@ export class ReactiveFormsComponent implements OnInit {
   // // 验证规则：要求最少长度为3
   // username: any = new FormControl('', [Validators.minLength(3)]);
   // username: any = new FormControl('', [Validators.maxLength(6)]);
-  // password = new FormControl('',);
+  password = new FormControl('',);
 
   // FormControl只能控制一个表单元素
   // username = new FormControl('', [this.customValidate]);

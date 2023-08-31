@@ -15,7 +15,7 @@ import { FormControl } from '@angular/forms';
 })
 export class FavoriteColorComponent implements OnInit {
   ngOnInit(): void {
-    console.log(this.favoriteColorControl);
+    console.log('favoriteColorControl>>>', this.favoriteColorControl);
     this.favoriteColorControl.setValue('red');
   }
 
