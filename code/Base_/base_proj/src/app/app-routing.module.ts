@@ -11,6 +11,7 @@ import { TimeGuard } from './time.guard';
 import { RouteProductDetailComponent } from './route-product-detail/route-product-detail.component';
 import { RouteProductListComponent } from './route-product-list/route-product-list.component';
 import { RouteUserCenterComponent } from './route-user-center/route-user-center.component';
+import { LocationStrategy, HashLocationStrategy, Location } from '@angular/common';
 
 const resolvedChildATitle: ResolveFn<string> = () => Promise.resolve('child a');
 
@@ -38,6 +39,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validator, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validator, Validators, ValidatorFn, AbstractControl, ValidationErrors, AsyncValidator } from '@angular/forms';
+import { Observable, catchError, map, of } from 'rxjs';
+import { HeroesService } from './hero.service';
+import { UniqueAlterEgoValidator } from './alter-ego.directive';
 
 @Component({
   selector: 'app-profile-editor',
@@ -16,9 +19,13 @@ export class ProfileEditorComponent implements OnInit {
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(8),
-      forbiddenNameValidator(/bob/i) // <-- Here's how you pass in the custom validator.
+      forbiddenNameValidator(/bob/i), // <-- Here's how you pass in the custom validator.
     ]),
-    lastName: new FormControl(''),
+    lastName: new FormControl('', {
+      validators: [Validators.required, Validators.maxLength(4),],
+      asyncValidators: [this.alterEgoValidator.validate.bind(this.alterEgoValidator)],
+      updateOn: 'change'
+    }),
     address: new FormGroup({
       street: new FormControl(''),
       city: new FormControl(''),
@@ -27,20 +34,27 @@ export class ProfileEditorComponent implements OnInit {
     })
   });
   get firstName() { return this.profileForm.get('firstName'); }
+  get lastName() { return this.profileForm.get('lastName'); }
   get state() { return this.profileForm.get('address')?.get('state'); }
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private alterEgoValidator: UniqueAlterEgoValidator
+  ) {
     this.profileForm.valueChanges.subscribe((value) => {
       // console.log('profileForm subscription>>>', value);
     });
     // this.profileForm.statusChanges.subscribe((value) => {
     //   console.log('profileForm statusChange>>>', value);
     // });
+
+    // this.lastName
   }
   ngOnInit(): void {
-    console.log('profileForm>>>', this.profileForm);
+    // console.log('profileForm>>>', this.profileForm);
     console.log('firstName formControl >>>', this.firstName);
-    console.log('state formControl >>>', this.state);
+    console.log('lastName formControl >>>', this.lastName);
+    // console.log('state formControl >>>', this.state);
   }
 
   onSubmit() {
@@ -71,7 +85,8 @@ export class ProfileEditorComponent implements OnInit {
     })
   }
   modelChange() {
-    console.log('firstName formControl >>>', this.firstName);
+    // console.log('modelChange,firstName >>>', this.firstName);
+    // console.log('modelChange,lastName >>>', this.lastName);
     // console.log('state formControl >>>', this.state);
   }
 
@@ -84,3 +99,7 @@ export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
     return forbidden ? { forbiddenName: { value: control.value } } : null;
   };
 }
+
+
+
+

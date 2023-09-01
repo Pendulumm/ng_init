@@ -58,6 +58,7 @@ import { AstronautComponent } from './blog-parent/astronaut.component';
 import { MissionControlComponent } from './blog-parent/missioncontrol.component';
 import { FavoriteColorComponent } from './reactive-forms/fav-color.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { LocationStrategy, HashLocationStrategy, Location } from '@angular/common';
 
 
 
@@ -130,7 +131,7 @@ const routes = [
     AstronautComponent,
 
     FavoriteColorComponent,
-     ProfileEditorComponent
+    ProfileEditorComponent
   ],
   imports: [
     //浏览器模块，只要Angular 用于Web项目，就必须导入此模块，其中导出了 CommonModule(ngFor,ngIf...)，
@@ -143,7 +144,10 @@ const routes = [
     ReactiveFormsModule,                    //响应式表单模块
 
   ],
-  providers: [],
+  providers: [
+    // Location, { provide: LocationStrategy, useClass: HashLocationStrategy }, // Hash routes
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

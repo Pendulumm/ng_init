@@ -20,11 +20,15 @@
         </div>
     </div>
     <div *ngIf="!firstName?.invalid">
-        <p>verified first name:{{firstName?.value}}</p>
+        <p style="color: green;">verified first name:{{firstName?.value}}</p>
     </div>
 
     <label for="last-name">Last Name: </label><br>
-    <input id="last-name" type="text" formControlName="lastName">
+    <input id="last-name" type="text" formControlName="lastName" (keydown)="modelChange()">
+    <div *ngIf="lastName?.errors?.['uniqueAlterEgo']">
+        <p>name can't be:{{lastName?.value}}</p>
+    </div>
+
 
     <div formGroupName="address">
         <h2>Address</h2>

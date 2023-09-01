@@ -12,7 +12,8 @@ export class RouteProductDetailComponent implements OnInit {
 
   // 声明依赖：读取参数需要 "当前的路由" 服务
   constructor(private route: ActivatedRoute) {
-
+    console.log('ActivatedRoute>>> ', route);
+    
   }
   ngOnInit() {
     // 组件初始化完成，读取路由参数，进而根据此参数查询商品详情

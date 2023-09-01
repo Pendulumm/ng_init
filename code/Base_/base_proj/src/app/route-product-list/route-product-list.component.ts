@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./route-product-list.component.css']
 })
 export class RouteProductListComponent {
-
+  goodId = 23;
 }
