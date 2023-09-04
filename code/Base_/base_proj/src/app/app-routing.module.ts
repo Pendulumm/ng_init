@@ -12,6 +12,7 @@ import { RouteProductDetailComponent } from './route-product-detail/route-produc
 import { RouteProductListComponent } from './route-product-list/route-product-list.component';
 import { RouteUserCenterComponent } from './route-user-center/route-user-center.component';
 import { LocationStrategy, HashLocationStrategy, Location } from '@angular/common';
+import { RouteProductEditComponent } from './route-product-list/product-list-edit.component';
 
 const resolvedChildATitle: ResolveFn<string> = () => Promise.resolve('child a');
 
@@ -31,7 +32,14 @@ const routes: Routes = [
     ]
   },
   { path: 'pList', component: RouteProductListComponent },
-  { path: 'pDetail/:id', component: RouteProductDetailComponent },
+  {
+    path: 'pDetail/:id', children: [
+      { path: '', component: RouteProductDetailComponent },
+      { path: 'edit', component: RouteProductEditComponent }
+    ],
+    pathMatch: 'prefix'
+    // pathMatch: 'full'
+  },
   { path: 'uCenter/list', component: RouteUserCenterComponent },
   { path: '**', component: RoutePrNotFoundComponent },
 ];

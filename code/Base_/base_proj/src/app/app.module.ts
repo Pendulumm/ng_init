@@ -146,7 +146,6 @@ const routes = [
   ],
   providers: [
     // Location, { provide: LocationStrategy, useClass: HashLocationStrategy }, // Hash routes
-
   ],
   bootstrap: [AppComponent]
 })

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class RouteProductListComponent {
   goodId = 23;
+
+  goodEditId = 33;
 }

@@ -7,3 +7,7 @@
 <a routerLink="/pDetail/13">查看商品13的详情</a>
 <br>
 <a [routerLink]="['/pDetail',goodId]">查看商品{{goodId}}的详情</a>
+<br>
+<a [routerLink]="['/pDetail',goodEditId,'edit']">修改商品{{goodEditId}}详情</a>
+
+<router-outlet></router-outlet>
