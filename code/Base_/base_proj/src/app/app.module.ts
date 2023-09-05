@@ -142,7 +142,6 @@ const routes = [
     HttpClientModule,
     RouterModule.forRoot(routes as any),    //导入路由模块，并注册了路由词典，用于根模块中
     ReactiveFormsModule,                    //响应式表单模块
-
   ],
   providers: [
     // Location, { provide: LocationStrategy, useClass: HashLocationStrategy }, // Hash routes
